@@ -1,47 +1,44 @@
 <template>
   <div id="app">
-    <div class="header flex flex-row">
-      <nav class="w-100p">
-        <ul class="flex flex-row flex-ai-center flex-jc-fend gap-10">
-          <li><img class="logo"
-          width="35px" src="@/assets/logo.png" alt="Logo" ></li>
-          <li><a href="">Menu 1</a></li>
-          <li><a href="">Menu 2</a></li>
-          <li><a href="">Menu 3</a></li>
-        </ul>
-      </nav>
-    </div>
+    <Header />
     <div class="main-container">
         <div class="container">
           <div class="flex flex-column flex-ai-center flex-jc-center">
-            <p class="text-blue bold">Hello le monde !</p>
             <p>La valeur de la variable est : {{ result }}</p>
             <p v-if="result === 0">Le paragraphe s'affiche car la variable est égale à 0</p>
           </div>
-          <div class="flex flex-row flex-ai-center flex-jc-center">
-            <button @click="result++">Incrémenter</button>
-            <button @click="result = 0">Reset</button>
-          </div>
+          <Counter :result="result" @update-result="update" :isDisabled="result === 0" />
+          <Select />
         </div>
     </div>
-    <div class="footer">
-      <ul class="flex flex-row flex-jc-center gap-10">
-        <li><a href="">Lien 1</a></li>
-        <li><a href="">Lien 2</a></li>        
-        <li><a href="">Lien 3</a></li>
-      </ul>
-    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 
+import Counter from './components/Counter.vue';
+import Footer from './components/Footer.vue';
+import Header from './components/Header.vue';
+import Select from './components/Select.vue';
+
 
 export default {
   name: 'App',
+  components: {
+    Counter,
+    Footer,
+    Header,
+    Select
+  },
   data() {
     return {
       result : 0
+    }
+  },
+  methods: {
+    update(number) {
+      this.result = number;
     }
   }
 }
@@ -52,6 +49,10 @@ export default {
 body{
   margin: 0;
   overflow: hidden;
+}
+
+body * {
+  padding: 0;
 }
 
 body > div{
@@ -70,6 +71,8 @@ nav ul li:first-child{
 
 nav{
   border: 2px solid black;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .header a,
