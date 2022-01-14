@@ -1,10 +1,6 @@
 <template>
   <div id="app">
     <Header />
-    <div class="main-container">
-      <div class="container">
-      </div>
-    </div>
     <Footer />
   </div>
 </template>
@@ -41,18 +37,6 @@ body {
 
   margin: 0;
   overflow: hidden;
-}
-
-.container {
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-.main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90%;
 }
 
 </style>

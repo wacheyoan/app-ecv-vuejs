@@ -3,12 +3,13 @@ export
   <header>
     <nav>
       <ul>
-        <li><img src="@/assets/logo.png" alt="Logo"></li>
-        <li><a href="">Menu 1</a></li>
+        <li><router-link to="/"><img src="@/assets/logo.png" alt="Logo"></router-link></li>
+        <li><router-link to="/users">Users</router-link></li>
         <li><a href="">Menu 2</a></li>
         <li><a href="">Menu 3</a></li>
       </ul>
     </nav>
+    <router-view></router-view>
   </header>
 </template>
 
