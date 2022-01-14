@@ -1,9 +1,10 @@
 import Vue from "vue";
 import App from "./App.vue";
-import store from "@/store";
+import store from "@/store/store";
 import Vuetify from "vuetify";
 import VueRouter from "vue-router";
 import User from "@/components/User";
+import vuetify from "./plugins/vuetify";
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify);
@@ -12,19 +13,18 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/users",
-    component: User
-  }
+    component: User,
+  },
 ];
-
 
 const router = new VueRouter({
   mode: "history",
-  routes
+  routes,
 });
 
 new Vue({
   router,
   store,
-  render: (h) => h(App)
+  vuetify,
+  render: (h) => h(App),
 }).$mount("#app");
-

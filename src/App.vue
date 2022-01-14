@@ -1,6 +1,9 @@
 <template>
-  <div id="app">
+  <div>
     <Header />
+    <div id="app">
+      <router-view></router-view>
+    </div>
     <Footer />
   </div>
 </template>
@@ -37,6 +40,12 @@ body {
 
   margin: 0;
   overflow: hidden;
+  & #app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
 }
 
 </style>

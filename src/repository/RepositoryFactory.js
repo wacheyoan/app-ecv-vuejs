@@ -1,8 +1,8 @@
 import UserRepository from "@/repository/UserRepository";
 
 const repositories = {
-  "users": UserRepository
+  users: UserRepository,
 };
 export default {
-  get: name => repositories[name]
+  get: (name) => repositories[name],
 };

@@ -11,12 +11,13 @@ export
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
 };
 </script>
 
 <style scoped lang="scss">
 footer {
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
