@@ -11,7 +11,7 @@ export
         <li>
           <router-link to="/users">Users</router-link>
         </li>
-        <li><a href="">Menu 2</a></li>
+        <li><router-link to="/registration">Inscription</router-link></li>
         <li><a href="">Menu 3</a></li>
       </ul>
     </nav>
